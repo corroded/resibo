@@ -1,3 +1,28 @@
-%h1 Sinatra has taken the stage
+%h1 Resibo
 
-%h2= @hello
+- @receipt_types.each do |receipt_type|
+  = partial :_receipt_type, locals: {receipt_type: receipt_type}
+
+%form{action: '/receipts', method: 'post'}
+  %fieldset
+    %ul
+      %li
+        %label{for: 'receipt_category'} Category:
+        %select#receipt_category{name: 'receipt[category]'}
+          %option{value: 'Meals'} Meals
+          %option{value: 'Business Development'} Business Development
+          %option{value: 'Parking/Toll'} Parking/Toll
+          %option{value: 'Taxi/Bus'} Taxi/Bus
+          %option{value: 'Gas/Fuel'} Gas/Fuel
+          %option{value: 'Computer Accessories'} Computer Accessories
+          %option{value: 'Books and Periodicals'} Books and Periodicals
+          %option{value: 'Medical'} Medical
+          %option{value: 'Others'} Others
+      %li
+        %label{for: 'receipt_amount'} Amount:
+        %input#receipt_amount{name: 'receipt[amount]', type: 'text', value: @receipt.amount}/
+      %li
+        %label{for: 'receipt_date'} Date:
+        %input#receipt_receipt_date{name: 'receipt[receipt_date]', type: 'text', value: @receipt.receipt_date}/
+      %li.actions
+        %input{type: 'submit', value: 'Add Receipt'}/
