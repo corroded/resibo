@@ -2,23 +2,13 @@
 @import compass/utilities
 @import compass/css3
 
+@import globals/colors
+
 // Base font
 =font-default
-  font: 13px Arial, Helvetica, sans-serif
-  
-// Links
-a
-  color: #3366CC
-  &:hover
-    color: #3366CC
-    text-decoration: none
-  &:focus,
-  &:active
-    outline: none
-  &:visited
-    // Default style for visited links
+  font: 16px Arial, Helvetica, sans-serif
 
 body
   +font-default
-  background: #fff
-  color: #0d0d0d
+  background: $base3
+  color: $base03
