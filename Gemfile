@@ -7,6 +7,7 @@ gem 'haml', '~> 3.1.4'
 gem 'sinatra-activerecord'
 gem 'pg'
 gem 'pry'
+gem 'tux'
 
 # Sass & Compass
 gem 'sass', '~> 3.1.12'
