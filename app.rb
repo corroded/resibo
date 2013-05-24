@@ -19,7 +19,18 @@ set :haml, {:format => :html5} # default Haml format is :xhtml
 # Application routes
 get '/' do
   @receipts = Receipt.all
+  @receipt = Receipt.new
   haml :index, :layout => :'layouts/application'
+end
+
+# Receipts
+post '/receipts' do
+  @receipt = Receipt.new params[:receipt]
+  if @receipt.save
+    redirect '/'
+  else
+    'There was a problem saving the receipt...'
+  end
 end
 
 get '/about' do
