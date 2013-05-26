@@ -1,0 +1,33 @@
+form
+  fieldset
+    +clearfix
+    ul
+      +span-columns(4,12)
+      li
+        +clearfix
+        color: $blue
+        label
+          +span-columns(4,4)
+          font:
+            size: 1.2em
+          padding: 0.5em 0
+        input, select
+          +span-columns(3,4)
+          +border-radius(5px)
+          border: 1px solid $base2
+          font:
+            size: 1.3em
+          padding: 0.3em
+          color: $base1
+
+
+.submit
+  cursor: pointer
+  color: $base3
+  background: $blue
+  margin: 1em 0
+
+  &:hover
+    background: $base3
+    color: $blue
+

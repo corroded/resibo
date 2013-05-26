@@ -14,12 +14,12 @@ time, mark, audio, video {
   margin: 0;
   padding: 0;
   border: 0;
-  font-size: 100%;
   font: inherit;
+  font-size: 100%;
   vertical-align: baseline;
 }
 
-body {
+html {
   line-height: 1;
 }
 
@@ -54,8 +54,115 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   display: block;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  color: #d33682;
+}
+
+h1 {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 1.5em;
+}
+
+h3 {
+  font-size: 1.3em;
+}
+
+h4 {
+  font-size: 1em;
+}
+
+h5 {
+  font-size: 0.9em;
+}
+
+h6 {
+  font-size: 0.8em;
+}
+
+table {
+  margin: 1em 0;
+}
+table th, table td {
+  padding: 0.3em 1em;
+  border: #002b36 1px solid;
+}
+table thead {
+  background: #b58900;
+  color: #fdf6e3;
+  font-weight: bold;
+}
+table tbody {
+  color: #002b36;
+}
+
+form fieldset {
+  overflow: hidden;
+  *zoom: 1;
+}
+form fieldset ul {
+  width: 32.20339%;
+  float: left;
+  margin-right: 1.69492%;
+  display: inline;
+}
+form fieldset ul li {
+  overflow: hidden;
+  *zoom: 1;
+  color: #268bd2;
+}
+form fieldset ul li label {
+  width: 100%;
+  float: left;
+  margin-right: 5.26316%;
+  display: inline;
+  font-size: 1.2em;
+  padding: 0.5em 0;
+}
+form fieldset ul li input, form fieldset ul li select {
+  width: 73.68421%;
+  float: left;
+  margin-right: 5.26316%;
+  display: inline;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  border: 1px solid #eee8d5;
+  font-size: 1.3em;
+  padding: 0.3em;
+  color: #93a1a1;
+}
+
+.submit {
+  cursor: pointer;
+  color: #fdf6e3;
+  background: #268bd2;
+  margin: 1em 0;
+}
+.submit:hover {
+  background: #fdf6e3;
+  color: #268bd2;
+}
+
 body {
   font: 16px Arial, Helvetica, sans-serif;
-  background: #fdf6e3;
   color: #002b36;
+  background: #fdf6e3;
+  *zoom: 1;
+  max-width: 59em;
+  _width: 59em;
+  padding-left: 1em;
+  padding-right: 1em;
+  margin-left: auto;
+  margin-right: auto;
+}
+body:after {
+  content: "";
+  display: table;
+  clear: both;
 }

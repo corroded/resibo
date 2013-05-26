@@ -1,8 +1,6 @@
 require './app'
 
-# Compass Configuration
-
-require 'grid-coordinates'
+require 'susy'
 
 # Configuration to use when running within Sinatra
 project_path          = Sinatra::Application.root
