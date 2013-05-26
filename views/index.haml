@@ -1,7 +1,20 @@
 %h1 Resibo
 
-- @receipt_types.each do |receipt_type|
-  = partial :_receipt_type, locals: {receipt_type: receipt_type}
+%table
+  %thead
+    %tr
+      %th Date
+      %th Amount
+      %th Category
+  %tbody
+    - @receipts.each do |receipt|
+      %tr
+        %td= prettify_date receipt.receipt_date
+        %td= receipt.amount
+        %td= receipt.category
+
+-# - @receipt_types.each do |receipt_type|
+-#   = partial :_receipt_type, locals: {receipt_type: receipt_type}
 
 %form{action: '/receipts', method: 'post'}
   %fieldset

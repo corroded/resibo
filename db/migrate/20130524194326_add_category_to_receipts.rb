@@ -1,7 +1,5 @@
-class AddCategoryToReceipt < ActiveRecord::Migration
-  def up
-  end
-
-  def down
+class AddCategoryToReceipts < ActiveRecord::Migration
+  def change
+    add_column :receipts, :category, :string
   end
 end
