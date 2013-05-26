@@ -6,6 +6,7 @@ require 'pry'
 
 # Helpers
 require './lib/render_partial'
+require './lib/prettify_date'
 require './models/receipt'
 
 # Set Sinatra variables
