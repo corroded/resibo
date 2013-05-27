@@ -153,6 +153,10 @@ form fieldset ul li input, form fieldset ul li select {
   color: #93a1a1;
 }
 
+.actions {
+  padding: 0.5em 0;
+}
+
 .submit {
   cursor: pointer;
   color: #fdf6e3;
@@ -162,6 +166,37 @@ form fieldset ul li input, form fieldset ul li select {
 .submit:hover {
   background: #fdf6e3;
   color: #268bd2;
+}
+
+.receipt-type-totals {
+  width: 100%;
+  float: left;
+  margin-right: 3.44828%;
+  display: inline;
+  overflow: hidden;
+  *zoom: 1;
+  margin: 1em 0;
+}
+.receipt-type-totals dt {
+  width: 48.27586%;
+  float: left;
+  margin-right: 3.44828%;
+  display: inline;
+  font-weight: bold;
+  color: #2aa198;
+  padding: 0.3em 0;
+}
+.receipt-type-totals dd {
+  width: 48.27586%;
+  float: right;
+  margin-right: 0;
+  *margin-left: -1em;
+  display: inline;
+  padding: 0.3em 0;
+}
+
+.total {
+  border-top: 1px solid #002b36;
 }
 
 .receipt-form {

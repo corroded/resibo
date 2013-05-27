@@ -26,6 +26,16 @@
           %input{type: 'submit', value: 'Add Receipt', class: 'submit'}/
 
   %section.receipts
+    %p.actions
+      %a.submit{href: '/generate'} Generate CSV
+
+    %dl.receipt-type-totals
+      - Receipt::RECEIPT_TYPES.each do |receipt_type|
+        %dt= receipt_type
+        %dd= Receipt.get_total_for(receipt_type)
+      %dt.total Total
+      %dd.total= Receipt.all.sum(&:amount).round(2)
+
     %table
       %thead
         %tr
@@ -39,8 +49,3 @@
             %td= receipt.amount
             %td= receipt.category
 
-    %dl.receipt-type-totals
-      %dt Meals
-
-    %p
-      %a.submit{href: '/generate'} Generate CSV

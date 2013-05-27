@@ -11,4 +11,8 @@ class Receipt < ActiveRecord::Base
 
     csv_row
   end
+
+  def self.get_total_for(receipt_type)
+    self.where(category: receipt_type).sum(&:amount).round(2)
+  end
 end
