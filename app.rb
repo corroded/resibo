@@ -3,10 +3,12 @@ require 'sinatra'
 require 'haml'
 require 'sinatra/activerecord'
 require 'pry'
+require 'csv'
 
 # Helpers
 require './lib/render_partial'
 require './lib/prettify_date'
+require './lib/generate_csv'
 require './models/receipt'
 
 # Set Sinatra variables
@@ -42,4 +44,8 @@ end
 
 get '/console' do
   binding.pry
+end
+
+get '/generate' do
+  generate_csv
 end
