@@ -48,4 +48,5 @@ end
 
 get '/generate' do
   generate_csv
+  send_file 'receipts.csv'
 end
