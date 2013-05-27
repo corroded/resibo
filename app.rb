@@ -23,7 +23,6 @@ set :haml, {:format => :html5} # default Haml format is :xhtml
 get '/' do
   @receipts = Receipt.all
   @receipt = Receipt.new
-  # @receipt_types = @receipts.map(&:category).uniq
 
   haml :index, :layout => :'layouts/application'
 end
