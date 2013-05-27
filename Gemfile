@@ -1,9 +1,9 @@
 source 'https://rubygems.org'
 
 gem 'rake'
-gem 'sinatra', '~> 1.2.3'
+gem 'sinatra'
 gem 'shotgun', '~> 0.9'
-gem 'haml', '~> 3.1.4'
+gem 'haml'
 gem 'sinatra-activerecord'
 gem 'pg'
 gem 'pry'
