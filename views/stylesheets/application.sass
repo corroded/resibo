@@ -1,0 +1,28 @@
+@import compass/reset
+@import compass/utilities
+@import compass/css3
+
+@import susy
+
+@import globals/colors
+@import globals/text
+
+@import components/tables
+@import components/forms
+@import components/lists
+
+@import sections/index
+
+// Base font
+=font-default
+  font: 16px Arial, Helvetica, sans-serif
+  color: $base03
+
+body
+  +font-default
+  background: $base3
+  +container
+
+.container
+  +container
+  +clearfix

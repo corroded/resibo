@@ -1,0 +1,51 @@
+%h1 Resibo
+
+%section.container
+  %form.receipt-form{action: '/receipts', method: 'post'}
+    %fieldset
+      %ul
+        %li
+          %label{for: 'receipt_category'} Category:
+          %select#receipt_category{name: 'receipt[category]'}
+            %option{value: 'Meals'} Meals
+            %option{value: 'Business Development'} Business Development
+            %option{value: 'Parking/Toll'} Parking/Toll
+            %option{value: 'Taxi/Bus'} Taxi/Bus
+            %option{value: 'Gas/Fuel'} Gas/Fuel
+            %option{value: 'Computer Accessories'} Computer Accessories
+            %option{value: 'Books and Periodicals'} Books and Periodicals
+            %option{value: 'Medical'} Medical
+            %option{value: 'Others'} Others
+        %li
+          %label{for: 'receipt_amount'} Amount:
+          %input#receipt_amount{name: 'receipt[amount]', type: 'text', value: @receipt.amount}/
+        %li
+          %label{for: 'receipt_date'} Date:
+          %input#receipt_receipt_date{name: 'receipt[receipt_date]', type: 'date', value: @receipt.receipt_date}/
+        %li.actions
+          %input{type: 'submit', value: 'Add Receipt', class: 'submit'}/
+
+  %section.receipts
+    %p.actions
+      %a.submit{href: '/generate'} Generate CSV
+
+    %dl.receipt-type-totals
+      - Receipt::RECEIPT_TYPES.each do |receipt_type|
+        %dt= receipt_type
+        %dd= Receipt.get_total_for(receipt_type)
+      %dt.total Total
+      %dd.total= Receipt.all.sum(&:amount).round(2)
+
+    %table
+      %thead
+        %tr
+          %th Date
+          %th Amount
+          %th Category
+      %tbody
+        - @receipts.each do |receipt|
+          %tr
+            %td= prettify_date receipt.receipt_date
+            %td= receipt.amount
+            %td= receipt.category
+
