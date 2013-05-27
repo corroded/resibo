@@ -83,6 +83,18 @@ h6 {
   font-size: 0.8em;
 }
 
+a {
+  text-decoration: none;
+}
+a.submit {
+  padding: 0.5em 1em;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+}
+
 table {
   margin: 1em 0;
 }
@@ -98,15 +110,18 @@ table thead {
 table tbody {
   color: #002b36;
 }
+table tbody tr:nth-child(even) {
+  background: #eee8d5;
+}
 
 form fieldset {
   overflow: hidden;
   *zoom: 1;
 }
 form fieldset ul {
-  width: 32.20339%;
+  width: 65.51724%;
   float: left;
-  margin-right: 1.69492%;
+  margin-right: 3.44828%;
   display: inline;
 }
 form fieldset ul li {
@@ -149,6 +164,21 @@ form fieldset ul li input, form fieldset ul li select {
   color: #268bd2;
 }
 
+.receipt-form {
+  width: 49.15254%;
+  float: left;
+  margin-right: 1.69492%;
+  display: inline;
+}
+
+.receipts {
+  width: 49.15254%;
+  float: right;
+  margin-right: 0;
+  *margin-left: -1em;
+  display: inline;
+}
+
 body {
   font: 16px Arial, Helvetica, sans-serif;
   color: #002b36;
@@ -162,6 +192,23 @@ body {
   margin-right: auto;
 }
 body:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.container {
+  *zoom: 1;
+  max-width: 59em;
+  _width: 59em;
+  padding-left: 1em;
+  padding-right: 1em;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+  *zoom: 1;
+}
+.container:after {
   content: "";
   display: table;
   clear: both;
