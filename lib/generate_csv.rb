@@ -4,7 +4,7 @@ module Sinatra
       CSV.open('receipts.csv', 'wb', row_sep: "\r\n") do |csv|
         csv << ['Date'] + Receipt::RECEIPT_TYPES
 
-        Receipt.all.each do |receipt|
+        Receipt.order('receipt_date ASC').each do |receipt|
           csv << receipt.as_csv
         end
 
