@@ -9,7 +9,7 @@
           %select#receipt_category{name: 'receipt[category]'}
             %option{value: 'Meals'} Meals
             %option{value: 'Business Development'} Business Development
-            %option{value: 'Parking/Toll'} Parking/Toll
+            %option{value: 'Parking/Toll', selected: true} Parking/Toll
             %option{value: 'Taxi/Bus'} Taxi/Bus
             %option{value: 'Gas/Fuel'} Gas/Fuel
             %option{value: 'Computer Accessories'} Computer Accessories
@@ -18,10 +18,11 @@
             %option{value: 'Others'} Others
         %li
           %label{for: 'receipt_amount'} Amount:
-          %input#receipt_amount{name: 'receipt[amount]', type: 'text', value: @receipt.amount}/
+          %input#receipt_amount{name: 'receipt[amount]', type: 'text', value: @receipt.amount, autofocus: true}/
         %li
           %label{for: 'receipt_date'} Date:
-          %input#receipt_receipt_date{name: 'receipt[receipt_date]', type: 'date', value: @receipt.receipt_date}/
+          %input#receipt_receipt_date{name: 'receipt[receipt_date]', type: 'text'}/
+          -# %input#receipt_receipt_date{name: 'receipt[receipt_date]', type: 'date', value: @receipt.receipt_date}/
         %li.actions
           %input{type: 'submit', value: 'Add Receipt', class: 'submit'}/
 
@@ -44,7 +45,7 @@
           %th Category
       %tbody
         - @receipts.each do |receipt|
-          %tr
+          %tr{id: "receipt-#{receipt.id}"}
             %td= prettify_date receipt.receipt_date
             %td= receipt.amount
             %td= receipt.category
