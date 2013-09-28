@@ -29,6 +29,7 @@ end
 
 # Receipts
 post '/receipts' do
+  params[:receipt][:receipt_date] = Date.parse "2013-09-#{params[:receipt][:receipt_date]}"
   @receipt = Receipt.new params[:receipt]
   if @receipt.save
     redirect '/'
